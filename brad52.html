@@ -1,0 +1,71 @@
+<script>
+    class Bike {         //定義類別
+        constructor(speed) {
+            document.write("Bike()<br>");
+            this.speed = speed;
+            this.name = '';
+
+        }
+        upSpeed() {
+            document.write("Bike:upSpeed()<br>");
+
+        }
+        static m1(){               //static不需要物件,分類觀念
+            document.write("Bike:ml():" +this.name+ "<br>");
+        }
+    }
+
+    class Scooter extends Bike {     //extends繼承
+        constructor(speed,gear){
+            document.write("Scooter()<br>");
+            super(speed);
+            this.speed = speed;
+            this.gear = gear;
+        }
+        
+        chGear(gear) {
+            document.write("Scooter:chGear()<br>");
+            this.gear = gear;
+        }
+        upSpeed() {
+            super.upSpeed();    //super是父類別
+            document.write("Scooter:upSpeed()<br>");
+
+        }
+    }
+
+    class Brad {
+        constructor(...x){
+            document.write("Brad()<br>");
+        }
+    }
+
+    let b1 = new Bike(123);
+    b1.upSpeed();
+
+    document.write(b1.speed);
+
+    let s1 = new Scooter(234);
+    s1.upSpeed(); 
+       s1.chGear(234);
+    document.write(s1.speed + "<hr>");
+    document.write(b1 instanceof Bike);
+    document.write("<hr>");
+    document.write(s1 instanceof Bike);
+    document.write("<hr>");
+    document.write(b1 instanceof Scooter);
+    document.write("<hr>");
+    document.write(s1 instanceof Scooter);
+    document.write("<hr>");
+
+    let brad1 = new Brad();
+    let brad2 = new Brad(1);
+    let brad3 = new Brad(1,2);
+
+    Bike.m1();     //Scotter繼承bike,所以也擁有static
+    Scooter.m1();
+
+ 
+
+
+</script>

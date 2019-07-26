@@ -1,3 +1,4 @@
+<script src="clone.js"></script>
 <script>
     let person = {
         name: 'Brad',
@@ -11,10 +12,26 @@
             speed: 20
         }],
         eat: function () {
-            document.write("eating...");
+            document.write(this.name + "eating...");
 
         }
     }
+
+    let strJSON = JSON.stringify(person);   //呼叫Json格式轉換,不轉換function,只轉換物件
+    document.write(strJSON);
+    document.write("<hr>");
+
+    let person2 = JSON.parse(strJSON);      //JSON屬性轉換
+    for (let key in person2) {
+        document.write(key + ":" + person2[key] + "<br>");
+    }
+
+    person.eat.call(person2);   //方法的呼叫
+    document.write("<hr>");
+
+    let person3 = clone(person);
+    person3.eat();
+
 
 
 </script>

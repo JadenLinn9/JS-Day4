@@ -17,3 +17,8 @@ Date.prototype.getTWYear = function(){
     return this.getFullYear() - 1911;
 }
 
+class Brad {
+    static m1(){
+        
+    }
+}
