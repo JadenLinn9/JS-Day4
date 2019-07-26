@@ -1,0 +1,35 @@
+<script>
+let bike = function(name,speed){   //建構式
+    this.name = name;
+    this.speed = speed;
+}
+
+bike.changeSpeed = function(speed){
+    this.speed = speed;
+    document.write("debug3 here");
+
+}
+
+bike.prototype.changeSpeed = function(speed){   //以自己的為準,沒有的話已prototype為準
+    document.write("debug here");
+}
+
+let b1 = new bike('Brad','12');
+b1.changeSpeed = function(speed){
+    document.write("debug2 here");
+}
+
+for (let key in b1){
+    document.write(key + ":" + b1[key] + "<br>");
+}
+document.write("<hr>");
+b1.changeSpeed(23);
+for (let key in b1){
+    document.write(key + ":" + b1[key] + "<br>");
+}
+
+document.write("<hr>");
+let b2 = new bike('Brad','12');
+b2.changeSpeed(23);
+
+</script>

@@ -1,0 +1,19 @@
+<script>
+    let f = function () {
+        this.a = 1;
+        this.b = 2;
+    }
+
+    let obj = new f();  //new就產生物件了
+    document.write(typeof obj + "<br>");
+    document.write(obj.a + ":" + obj.b + "<br>");
+
+    f.prototype.b = 3;
+    f.prototype.c = 4;   //擴充但不會改值
+    document.write(obj.a + "<br>");
+    document.write(obj.b + "<br>");
+    document.write(obj.c + "<br>");
+
+
+
+</script>

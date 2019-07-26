@@ -1,0 +1,24 @@
+<script>
+let bike = function(){
+    console.log("a bike constructor");  //建構式
+    this.a = 12;
+    this.b = 34;
+}
+
+let b1 = new bike();
+
+bike.prototype.x = 111;
+document.write(b1.x +"<br>");
+
+bike.prototype.b = 222;  //若與本物件牴觸,不會改變
+document.write(b1.b + "<br>");
+
+let b2 = new bike();   //初始化預設bike()的值再重新給值
+b2.a = 56;
+b2.c = 78;
+document.write(b2.a + "<br>"); //56
+document.write(b2.b + "<br>"); //34
+document.write(b2.c + "<br>"); //78
+document.write(b2.x + "<br>"); //111
+
+</script>
