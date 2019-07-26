@@ -12,3 +12,8 @@ function clone(source) {
     }
     return target;
 }
+
+Date.prototype.getTWYear = function(){
+    return this.getFullYear() - 1911;
+}
+

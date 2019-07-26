@@ -1,0 +1,27 @@
+<meta charset="utf-8">
+<script>
+Date.prototype.getTWYear = function(){
+    return this.getFullYear() - 1911;
+}
+Date.prototype.getTWMonth = function(){
+    return this.getMonth() + 1;
+}
+Date.prototype.getWeek = function(){
+    let s = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+    let w = getDate();
+    return t = s[w];
+}
+
+
+
+</script>
+<script>
+    
+    setInterval(() => {
+        let clock = new Date();
+        let clockString = clock.getTWYear() + "-" + clock.getTWMonth() + "-" + clock.getWeek();
+        now.innerHTML = clockString;
+    }, 1*1000);
+
+</script>
+目前日期時間: <span id="now"></span>

@@ -2,6 +2,9 @@
 let bike = function(name,speed){   //建構式
     this.name = name;
     this.speed = speed;
+    this.changeSpeed = function(speed){
+        document.write("debug4 here");
+    }
 }
 
 bike.changeSpeed = function(speed){
@@ -10,7 +13,7 @@ bike.changeSpeed = function(speed){
 
 }
 
-bike.prototype.changeSpeed = function(speed){   //以自己的為準,沒有的話已prototype為準
+bike.prototype.changeSpeed = function(speed){   //以自己的為準,沒有的話已prototype(原生擴充)為準
     document.write("debug here");
 }
 
