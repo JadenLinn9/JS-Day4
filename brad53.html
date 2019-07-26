@@ -1,0 +1,40 @@
+<script>
+//get : url傳送enter,對個別瀏覽器的限制
+//post : must be,用於帳號密碼'檔案上傳
+
+let xhttp = new XMLHttpRequest();
+function test1 (){
+
+xhttp.onreadystatechange = function(){
+    switch(this.readyState){
+        case 1:
+            state1.innerHTML = 'OK'; break;
+            case 2:
+            state2.innerHTML = 'OK'; break;
+            case 3:
+            state3.innerHTML = 'OK'; break;
+            case 4:
+            state4.innerHTML = 'OK:' + this.status;
+            break;
+
+    }
+
+};
+xhttp.open("GET","brad01.php",true);
+xhttp.send();
+}
+</script>
+
+<!-- <form method="POST" action="brad01.php">
+    <input type="file" name="upload">
+    <input type="submit" value="Upload">
+    <hr>
+    <input type="button" value="test1" onclick="test1()">
+    
+
+</form> -->
+<div id="state1"></div>
+    <div id="state2"></div>
+    <div id="state3"></div>
+    <div id="state4"></div>
+    <div id="state5"></div>

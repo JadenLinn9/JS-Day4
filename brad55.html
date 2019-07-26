@@ -1,0 +1,37 @@
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+  <h1 id="text1">Brad Company</h1>
+  <div id="container">
+      <h1>I am h1</h1>
+      <p>p1</p>
+      <hr>
+      <h2>I am h2</h2>
+      <p>p2</p>
+  </div>
+  <hr>
+  <input type="button" value="OK" id="text2">
+  <script>
+      //$('#container p') -> container所有的p(array)
+      $('#text1').click(function(){
+          $('#text1').css("color","red");
+      
+
+      let ps = $('p');
+      for (let p of ps){
+          p.style.color = 'yellow';
+          p.style.backgroundColor = 'pink';
+      }
+
+      $obj = $(document.getElementById('container')); //轉成了JQuery
+      $obj.css('background-color','pink');
+
+      $('#text2').attr('disabled','true');
+      $('#text2').val('xx');
+
+});
+  
+  
+  </script>
